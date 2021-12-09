@@ -34,7 +34,7 @@ let fruitPrice = {
     apple: 700
 }
 
-let record = {};
+let record = [];
 
 function calcTax(amount, percentage = 5){
     return (amount * 5 ) / 100;
@@ -44,12 +44,13 @@ function calcTax(amount, percentage = 5){
 function cost(fruit, qty){
     let calc = fruitPrice[fruit] * qty;
     console.log(calc)
-    return {
+    rec = {
         fruit: fruit,
         quatity: qty,
         cost: calc,
         tax: calcTax(calc),
         total: calc + calcTax(calc)
     };
+    record.push(rec);
 
 }
